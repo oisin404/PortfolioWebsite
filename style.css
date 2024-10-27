@@ -1,0 +1,101 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+/* Section Styling */
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+/* Project Carousel */
+.project-carousel {
+  display: flex;
+  overflow-x: auto; /* Enables horizontal scroll */
+  scroll-behavior: smooth; /* Smooth scroll */
+  gap: 1rem;
+  padding: 1rem; /* Space around the carousel */
+  max-width: 100%; /* Ensures it doesn't overflow the viewport */
+  width: 100%; /* Ensures it takes the full width */
+  justify-content: flex-start; /* Align items to the start */
+}
+
+.project-card {
+  min-width: 250px; /* Ensure each card has a minimum width */
+  height: 400px; /* Increased height for the card */
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent shrinking */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Ensure correct stacking context */
+  overflow: hidden; /* Ensure no overflow from children */
+}
+
+/* Unique gradients for each project card */
+.project-card:nth-child(1) {
+  background: linear-gradient(135deg, #d5006d, #ff4081); /* Pink to light pink */
+}
+
+.project-card:nth-child(2) {
+  background: linear-gradient(135deg, #c51162, #ff4081); /* Dark pink to pink */
+}
+
+.project-card:nth-child(3) {
+  background: linear-gradient(135deg, #ab47bc, #8e24aa); /* Purple to dark purple */
+}
+
+.project-card:nth-child(4) {
+  background: linear-gradient(135deg, #9c27b0, #e91e63); /* Purple to pink */
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Scrollbar Styling */
+.project-carousel {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #007bff #f4f4f4; /* Custom scrollbar color for Firefox */
+}
+
+.project-carousel::-webkit-scrollbar {
+  height: 8px; /* Visible horizontal scrollbar height */
+}
+
+.project-carousel::-webkit-scrollbar-track {
+  background: #f4f4f4; /* Track background */
+}
+
+.project-carousel::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Scrollbar thumb color */
+  border-radius: 4px;
+}
