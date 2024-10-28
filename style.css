@@ -7,13 +7,14 @@
 
 body {
   font-family: Arial, sans-serif;
-  color: #333;
+  color: #e0e0e0; /* Light text for contrast on dark background */
+  background-color: #121212; /* Dark background */
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background: #222;
+  background: #1e1e1e; /* Darker header background */
   color: #fff;
   padding: 1rem;
   text-align: center;
@@ -25,77 +26,110 @@ header h1 {
 }
 
 header nav a {
-  color: #fff;
+  color: #bbb; /* Light color for links */
   margin: 0 1rem;
   text-decoration: none;
+}
+
+header nav a:hover {
+  color: #fff; /* Brighten link on hover */
 }
 
 /* Section Styling */
 section {
   padding: 2rem;
-  max-width: 800px;
+  max-width: 900px; /* Increased max-width to make section wider */
+  width: 90%; /* Ensure the section takes up 90% of the viewport width */
   margin: 2rem auto;
 }
 
 /* Project Carousel */
 .project-carousel {
   display: flex;
-  overflow-x: auto; /* Enables horizontal scroll */
-  scroll-behavior: smooth; /* Smooth scroll */
+  overflow-x: auto;
+  scroll-behavior: smooth;
   gap: 1rem;
-  padding: 1rem; /* Space around the carousel */
-  max-width: 100%; /* Ensures it doesn't overflow the viewport */
-  width: 100%; /* Ensures it takes the full width */
-  justify-content: flex-start; /* Align items to the start */
+  padding: 1rem;
+  max-width: 100%;
+  width: 100%;
+  justify-content: flex-start;
+
+  /* Mask for fading edges */
+  mask-image: linear-gradient(to right, rgba(18, 18, 18, 0), rgba(18, 18, 18, 0.8) 10%, rgba(18, 18, 18, 1) 90%, rgba(18, 18, 18, 0));
 }
 
+/* Project Card */
 .project-card {
-  min-width: 250px; /* Ensure each card has a minimum width */
-  height: 400px; /* Increased height for the card */
+  min-width: 250px;
+  width: 250px;
+  height: 400px;
   border-radius: 8px;
   text-align: center;
-  flex-shrink: 0; /* Prevent shrinking */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative; /* Ensure correct stacking context */
-  overflow: hidden; /* Ensure no overflow from children */
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Softer shadow for dark mode */
+  background: linear-gradient(135deg, #2a2a2a, #3b3b3b); /* Subtle gradient background */
+  color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+
+  /* Flexbox properties for vertical alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Smooth transition for scale and shadow with delay */
+  transition: transform 0.3s ease 0.1s, box-shadow 0.3s ease 0.1s;
+  padding-bottom: 100px;
 }
 
-/* Unique gradients for each project card */
-.project-card:nth-child(1) {
-  background: linear-gradient(135deg, #d5006d, #ff4081); /* Pink to light pink */
+/* Card Title */
+.project-card h3 {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 1.2em;
+  color: #ffffff; /* Bright title text */
+  white-space: nowrap;
 }
 
-.project-card:nth-child(2) {
-  background: linear-gradient(135deg, #c51162, #ff4081); /* Dark pink to pink */
+/* Card Description */
+.project-card p {
+  margin: 10px 0;
+  padding: 0 10px;
+  color: #bbbbbb; /* Softer color for description */
+  overflow-wrap: break-word;
 }
 
-.project-card:nth-child(3) {
-  background: linear-gradient(135deg, #ab47bc, #8e24aa); /* Purple to dark purple */
+.project-card a {
+  color: #000000; /* Link color for dark background */
+  text-decoration: none;
 }
 
-.project-card:nth-child(4) {
-  background: linear-gradient(135deg, #9c27b0, #e91e63); /* Purple to pink */
+.project-card a:hover {
+  color: #555555; /* Brighter link color on hover */
 }
 
+/* Project Card Hover Effect */
 .project-card:hover {
-  transform: scale(1.05); /* Slight scale on hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2); /* Brighter shadow on hover */
 }
 
 /* Scrollbar Styling */
 .project-carousel {
   scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #007bff #f4f4f4; /* Custom scrollbar color for Firefox */
+  scrollbar-color: #555555 #1a1a1a; /* Custom scrollbar color for Firefox */
 }
 
 .project-carousel::-webkit-scrollbar {
-  height: 8px; /* Visible horizontal scrollbar height */
+  height: 8px;
 }
 
 .project-carousel::-webkit-scrollbar-track {
-  background: #f4f4f4; /* Track background */
+  background: #1a1a1a;
 }
 
 .project-carousel::-webkit-scrollbar-thumb {
-  background-color: #007bff; /* Scrollbar thumb color */
+  background-color: #555555;
   border-radius: 4px;
 }

@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Set static gradients for each project card
     const gradients = [
-        'linear-gradient(135deg, #ff7e7e, #ffb6f9)',
-        'linear-gradient(135deg, #7e7eff, #ff7eff)',
-        'linear-gradient(135deg, #b66bff, #ffb6f9)',
-        'linear-gradient(135deg, #7effb6, #ffb66b)'
+        'linear-gradient(135deg, #ab00b2, #ff00e2)',
+        'linear-gradient(135deg, #e536c6, #cd00ff)',
+        'linear-gradient(135deg, #ab00b2, #ff00e2)',
+        'linear-gradient(135deg, #e536c6, #cd00ff)'
     ];
 
     projectCards.forEach((card, index) => {
