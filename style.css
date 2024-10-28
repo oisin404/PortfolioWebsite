@@ -1,4 +1,3 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,43 +6,63 @@
 
 body {
   font-family: Arial, sans-serif;
-  color: #e0e0e0; /* Light text for contrast on dark background */
-  background-color: #121212; /* Dark background */
+  color: #e0e0e0;
+  background-color: #121212;
   line-height: 1.6;
 }
 
-/* Header */
 header {
-  background: #1e1e1e; /* Darker header background */
+  background: #1e1e1e;
   color: #fff;
   padding: 1rem;
   text-align: center;
+  position: relative;
 }
 
-header h1 {
+.name {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  transition: opacity 0.4s ease 0.4s; /* Adds delay for fade-in after fade-out */
+  position: relative;
+}
+
+.description {
+  opacity: 0;
+  font-size: 1rem;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease; /* Matches fade-out timing */
+}
+
+header:hover .name {
+  opacity: 0;
+  transition: opacity 0.4s ease; /* Matches the fade-out */
+}
+
+header:hover .description {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s; /* Delay for fade-in after name fades out */
 }
 
 header nav a {
-  color: #bbb; /* Light color for links */
+  color: #bbb;
   margin: 0 1rem;
   text-decoration: none;
 }
 
 header nav a:hover {
-  color: #fff; /* Brighten link on hover */
+  color: #fff;
 }
 
-/* Section Styling */
 section {
   padding: 2rem;
-  max-width: 900px; /* Increased max-width to make section wider */
-  width: 90%; /* Ensure the section takes up 90% of the viewport width */
+  max-width: 900px;
+  width: 90%;
   margin: 2rem auto;
 }
 
-/* Project Carousel */
 .project-carousel {
   display: flex;
   overflow-x: auto;
@@ -53,12 +72,8 @@ section {
   max-width: 100%;
   width: 100%;
   justify-content: flex-start;
-
-  /* Mask for fading edges */
-  mask-image: linear-gradient(to right, rgba(18, 18, 18, 0), rgba(18, 18, 18, 0.8) 10%, rgba(18, 18, 18, 1) 90%, rgba(18, 18, 18, 0));
 }
 
-/* Project Card */
 .project-card {
   min-width: 250px;
   width: 250px;
@@ -66,59 +81,51 @@ section {
   border-radius: 8px;
   text-align: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Softer shadow for dark mode */
-  background: linear-gradient(135deg, #2a2a2a, #3b3b3b); /* Subtle gradient background */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #2a2a2a, #3b3b3b);
   color: #e0e0e0;
   position: relative;
   overflow: hidden;
-
-  /* Flexbox properties for vertical alignment */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  /* Smooth transition for scale and shadow with delay */
-  transition: transform 0.3s ease 0.1s, box-shadow 0.3s ease 0.1s;
+  transition: transform 0.3s ease 0.05s, box-shadow 0.3s ease 0.05s;
   padding-bottom: 100px;
 }
 
-/* Card Title */
 .project-card h3 {
   margin: 0;
   padding: 0 10px;
   font-size: 1.2em;
-  color: #ffffff; /* Bright title text */
+  color: #ffffff;
   white-space: nowrap;
 }
 
-/* Card Description */
 .project-card p {
   margin: 10px 0;
   padding: 0 10px;
-  color: #bbbbbb; /* Softer color for description */
+  color: #bbbbbb;
   overflow-wrap: break-word;
 }
 
 .project-card a {
-  color: #000000; /* Link color for dark background */
+  color: #000000;
   text-decoration: none;
 }
 
 .project-card a:hover {
-  color: #555555; /* Brighter link color on hover */
+  color: #555555;
 }
 
-/* Project Card Hover Effect */
 .project-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2); /* Brighter shadow on hover */
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
 }
 
-/* Scrollbar Styling */
 .project-carousel {
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #555555 #1a1a1a; /* Custom scrollbar color for Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #555555 #1a1a1a;
 }
 
 .project-carousel::-webkit-scrollbar {
