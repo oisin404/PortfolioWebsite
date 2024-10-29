@@ -22,7 +22,7 @@ header {
 .name {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  transition: opacity 0.4s ease 0.4s; /* Adds delay for fade-in after fade-out */
+  transition: opacity 0.4s ease 0.4s;
   position: relative;
 }
 
@@ -33,17 +33,17 @@ header {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: opacity 0.4s ease; /* Matches fade-out timing */
+  transition: opacity 0.4s ease;
 }
 
 header:hover .name {
   opacity: 0;
-  transition: opacity 0.4s ease; /* Matches the fade-out */
+  transition: opacity 0.4s ease;
 }
 
 header:hover .description {
   opacity: 1;
-  transition: opacity 0.4s ease 0.4s; /* Delay for fade-in after name fades out */
+  transition: opacity 0.4s ease 0.4s;
 }
 
 header nav a {

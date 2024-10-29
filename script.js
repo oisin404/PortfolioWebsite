@@ -1,4 +1,3 @@
-// Smooth scrolling for internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -20,6 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     projectCards.forEach((card, index) => {
-        card.style.background = gradients[index]; // Apply unique gradient to each card
+        card.style.background = gradients[index];
     });
 });
