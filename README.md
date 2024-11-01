@@ -15,3 +15,4 @@ This project is licensed under the MIT License.
 
 ## Contact
 - **GitHub**: [oisin404](https://github.com/oisin404)
+- **Discord**: oisin404
