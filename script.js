@@ -10,7 +10,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener("DOMContentLoaded", () => {
     const projectCards = document.querySelectorAll('.project-card');
 
-    // Set static gradients for each project card
     const gradients = [
         'linear-gradient(135deg, #ab00b2, #ff00e2)',
         'linear-gradient(135deg, #e536c6, #cd00ff)',
