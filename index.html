@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oisin's Portfolio</title>
   <link rel="stylesheet" href="styles/style.css">
-  <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -19,6 +19,8 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
+
+  <button id="scrollToTop" aria-label="Scroll to top">↑</button>
 
   <section id="about">
     <h2>About Me</h2>
@@ -61,9 +63,26 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Discord: <b>oisin404</b></p>
-    <p>BTC: <b>bc1qcl58uss3r0cqvzu04s5n803wdprrqrsm7lrt0z</b></p>
+    <div class="contact-info">
+        <div class="contact-item">
+            <span class="contact-label">Discord:</span>
+            <b>oisin404</b>
+        </div>
+        <div class="contact-item">
+            <span class="contact-label">GitHub:</span>
+            <a href="https://github.com/oisin404" target="_blank">github.com/oisin404</a>
+        </div>
+        <div class="contact-item">
+            <span class="contact-label">BTC:</span>
+            <div class="btc-address" id="btcAddress" data-address="bc1qcl58uss3r0cqvzu04s5n803wdprrqrsm7lrt0z" onclick="copyBTCAddress()">
+                bc1qcl58uss3r0cqvzu04s5n803wdprrqrsm7lrt0z
+                <span class="tooltip" id="tooltip">Copy to clipboard</span>
+            </div>
+        </div>
+    </div>
   </section>
+
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="scripts/script.js"></script>

@@ -38,7 +38,6 @@ header {
 
 header:hover .name {
   opacity: 0;
-  transition: opacity 0.4s ease;
 }
 
 header:hover .description {
@@ -84,22 +83,22 @@ section {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   background: linear-gradient(135deg, #2a2a2a, #3b3b3b);
   color: #e0e0e0;
-  position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   transition: transform 0.3s ease 0.05s, box-shadow 0.3s ease 0.05s;
-  padding-bottom: 100px;
+  padding: 20px 10px;
 }
 
 .project-card h3 {
   margin: 0;
-  padding: 0 10px;
   font-size: 1.2em;
   color: #ffffff;
-  white-space: nowrap;
+  height: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-card p {
@@ -107,15 +106,21 @@ section {
   padding: 0 10px;
   color: #bbbbbb;
   overflow-wrap: break-word;
+  min-height: 3em;
 }
 
 .project-card a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
+  margin-top: auto;
+  background: #3f3f3f;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
 .project-card a:hover {
-  color: #555555;
+  background: #121212;
 }
 
 .project-card:hover {
@@ -139,4 +144,105 @@ section {
 .project-carousel::-webkit-scrollbar-thumb {
   background-color: #555555;
   border-radius: 4px;
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e536c6;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTop:hover {
+  background-color: #cd00ff;
+  transform: scale(1.1);
+}
+
+#contact {
+  text-align: center;
+  padding: 2rem;
+  color: #e0e0e0;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#contact h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-label {
+  font-weight: bold;
+  color: #bbbbbb;
+}
+
+.contact-item a {
+  color: #7fd8ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #a3ecff;
+}
+
+.btc-address {
+  position: relative;
+  cursor: pointer;
+  color: #ffab00;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.btc-address:hover {
+  color: #ffdd57;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.btc-address:active .tooltip,
+.btc-address.clicked .tooltip {
+  opacity: 1;
 }

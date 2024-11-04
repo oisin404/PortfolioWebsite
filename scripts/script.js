@@ -9,6 +9,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const projectCards = document.querySelectorAll('.project-card');
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    const headerHeight = document.querySelector('header').offsetHeight;
 
     const gradients = [
         'linear-gradient(135deg, #ab00b2, #ff00e2)',
@@ -20,4 +22,36 @@ document.addEventListener("DOMContentLoaded", () => {
     projectCards.forEach((card, index) => {
         card.style.background = gradients[index];
     });
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > headerHeight) {
+            scrollToTopButton.style.display = 'flex';
+        } else {
+            scrollToTopButton.style.display = 'none';
+        }
+    });
+
+    scrollToTopButton.addEventListener('click', () => {
+        document.querySelector('html').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
+
+function copyBTCAddress() {
+  const btcAddress = document.getElementById('btcAddress');
+  const tooltip = document.getElementById('tooltip');
+  
+  const address = btcAddress.dataset.address;
+  navigator.clipboard.writeText(address).then(() => {
+      tooltip.textContent = "Copied!";
+      btcAddress.classList.add('clicked');
+      
+      setTimeout(() => {
+          tooltip.textContent = "Copy to clipboard";
+          btcAddress.classList.remove('clicked');
+      }, 1500);
+  }).catch(err => {
+      console.error('Failed to copy text: ', err);
+  });
+}
