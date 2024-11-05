@@ -287,3 +287,8 @@ section {
   color: #bbbbbb;
   line-height: 1.5;
 }
+
+#about iframe {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
