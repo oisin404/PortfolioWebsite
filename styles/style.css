@@ -259,6 +259,16 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+header:hover .name {
+  opacity: 0;
+  transition-delay: 0.4s; /* Add this line */
+}
+
+header:hover .description {
+  opacity: 1;
+  transition-delay: 0.4s; /* Add this line */
+}
+
 .skill-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
